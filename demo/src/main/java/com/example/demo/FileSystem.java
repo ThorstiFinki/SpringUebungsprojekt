@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import jakarta.annotation.PreDestroy;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -44,4 +45,10 @@ public class FileSystem {
             throw new UncheckedIOException(e);
         }
     }
+
+    @PreDestroy
+    public void onDestroy() {
+        System.out.println("Das Programm wird beendet. Auf Wiedersehen!");
+    }
+
 }

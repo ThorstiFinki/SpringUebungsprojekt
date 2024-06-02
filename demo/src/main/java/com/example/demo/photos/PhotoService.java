@@ -18,9 +18,20 @@ public class PhotoService {
   final private Thumbnail thumbnail;
   //  private final ApplicationEventPublisher publisher;
 
-    public PhotoService(FileSystem fs, Thumbnail thumbnail /*, ApplicationEventPublisher publisher */) {
+
+  //  final private String schnubi  ;
+    //  private final ApplicationEventPublisher publisher;
+
+
+    final private String schnubiZwei  ;
+    //  private final ApplicationEventPublisher publisher;
+
+
+    @Autowired
+    public PhotoService(FileSystem fs, Thumbnail thumbnail, String schnöp /*, ApplicationEventPublisher publisher */) {
         this.fs = fs;
         this.thumbnail = thumbnail;
+        this.schnubiZwei = schnöp;
      //   this.publisher = publisher;
     }
 

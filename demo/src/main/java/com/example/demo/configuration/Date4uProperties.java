@@ -1,6 +1,7 @@
 package com.example.demo.configuration;
 
 import com.example.demo.FileSystem;
+import jakarta.annotation.PreDestroy;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -34,7 +35,6 @@ public class Date4uProperties {
     public void setFilesystem(Filesystem filesystem) {
         this.filesystem = filesystem;
     }
-
 
 
 

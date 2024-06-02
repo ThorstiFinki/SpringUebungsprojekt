@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import java.util.UUID;
 
@@ -12,7 +13,8 @@ public class APPUuidConfig {
 
     private final Logger log = LoggerFactory.getLogger(getClass());
 
-    @Bean String appUuid(){
+    @Bean
+    @Primary String appUuid(){
         String uuid = UUID.randomUUID().toString();
         log.info("uuid->{}", uuid);
         return uuid;
