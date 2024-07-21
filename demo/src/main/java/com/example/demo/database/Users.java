@@ -14,8 +14,17 @@ public class Users {
     private Long id;
     private String username;
     private String email;
+    private String geschlecht;
+    private int age;
 
     // Getter und Setter
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
     public Long getId() {
         return id;
@@ -29,8 +38,8 @@ public class Users {
         return username;
     }
 
-    public void setName(String name) {
-        this.username = name;
+    public void setName(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
@@ -39,5 +48,12 @@ public class Users {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public String getGeschlecht() {
+        return geschlecht;
+    }
+
+    public void setGeschlecht(String geschlecht) {
+        this.geschlecht = geschlecht;
     }
 }

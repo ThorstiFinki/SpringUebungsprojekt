@@ -21,6 +21,8 @@ public class FunRestController {
 
     @PostMapping
     public Users createUser(@RequestBody Users user) {
+        System.out.println("Received user: " + user);
+        System.out.println("Alter value: " + user.getAge()); // Debugging-Zwecke
         return userRepository.save(user);
     }
 
