@@ -3,6 +3,7 @@ package com.example.demo.rest;
 import com.example.demo.database.Users;
 import com.example.demo.database.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,6 +11,19 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class FunRestController {
+
+    //BeispielValue aus application Properties~~~~~~~~~~
+    @Value("${band.name}")
+    private String bandName;
+
+    @Value("${singer.name}")
+    private String singerName;
+    @GetMapping ("/music")
+    public String getMusic(){
+        return "Band: " + bandName +", Singer: "+ singerName;
+    }
+
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     @Autowired
     private UsersRepository userRepository;

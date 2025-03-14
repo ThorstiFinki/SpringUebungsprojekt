@@ -1,13 +1,11 @@
 package com.example.demo;
 
 
+import com.example.demo.AnnesCorner.Autohändler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.util.unit.DataSize;
 
 
 @SpringBootApplication
@@ -20,23 +18,45 @@ public class DemoApplication  implements CommandLineRunner {
 @Autowired
 private JdbcTemplate jdbcTemplate;
 
+
+
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
 
-
-
-		ApplicationContext context = SpringApplication.run(DemoApplication.class, args);
-		for (String beanDefinitionName : context.getBeanDefinitionNames()) {
-			System.out.println(beanDefinitionName);
-		}
-
-		DemoApplication bean = context.getBean(DemoApplication.class);
-		System.out.println(bean); //Meine Bohne
-
-		FileSystem fileSystem = context.getBean(FileSystem.class);
-		System.out.printf("%d GB%n",DataSize.ofBytes(fileSystem.getFreedDiskSpace()).toGigabytes());
+		Autohändler autohändler = new Autohändler();
+		autohändler.printModelle();
+//
+//
+//		int n = 100;
+//		printFibonacciSeries(n); // Gibt die ersten 10 Fibonacci-Zahlen aus
+//
+//		SpringApplication.run(DemoApplication.class, args);
+//		ApplicationContext context = SpringApplication.run(DemoApplication.class, args);
+//		for (String beanDefinitionName : context.getBeanDefinitionNames()) {
+//			System.out.println(beanDefinitionName);
+//		}
+//
+//		DemoApplication bean = context.getBean(DemoApplication.class);
+//		System.out.println(bean); //Meine Bohne
+//
+//		FileSystem fileSystem = context.getBean(FileSystem.class);
+//		System.out.printf("%d GB%n",DataSize.ofBytes(fileSystem.getFreedDiskSpace()).toGigabytes());
 
 	}
+	public static void printFibonacciSeries(int n) {
+		int first = 0, second = 1;
+
+		System.out.print("Fibonacci Series up to " + n + " numbers: ");
+
+		for (int i = 1; i <= n; i++) {
+			System.out.print(first + " ");
+
+			int next = first + second;
+			first = second;
+			second = next;
+		}
+		System.out.println();
+	}
+
 	@Override
 	public void run(String... args) throws Exception {
 		// SQL-Befehle zur Erstellung der Datenbank und der Tabelle
