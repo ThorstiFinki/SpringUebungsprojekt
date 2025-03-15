@@ -7,8 +7,15 @@ public class Kinderauto extends Auto{
     }
 
     private double kinderalter = 0.0;
-    public Kinderauto(String typ, int pS, double kinderalter) {
+
+    public String getFarbe() {
+        return farbe;
+    }
+
+    private String farbe = "grau";
+    public Kinderauto(String typ, int pS, double kinderalter, String farbe) {
         super(typ, pS);
         this.kinderalter = kinderalter;
+        this.farbe = farbe;
     }
 }
